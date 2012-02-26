@@ -31,7 +31,7 @@ function buildIntValidator(field) {
     return {
         valid: function(errors) {
             var value = field.value;
-            if (isNaN(parseInt(value, 10))) {
+            if (isNaN(Number(value))) {
                 errors.push('Value is not a number.');
                 return false;
 
