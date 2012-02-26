@@ -1,0 +1,22 @@
+.fields {
+  list-style-type: none;
+}
+
+.fields li {
+  padding: 0.5em;
+  margin-bottom: 2em;
+}
+
+.fields label {
+  display: block;
+}
+
+.fields li.erroneous {
+  border: 1px solid #FAA;
+  background-color: #FEE;
+}
+
+.fields li.erroneous div.error {
+  color: #F33;
+  padding-top: 0.2em;
+}
