@@ -52,7 +52,18 @@ function buildIntValidator(field) {
 // TODO: implement Value-Required Validator
 
 
-// TODO: implement E-Mail Validator
+function buildEmailValidator(field) {
+  return {
+    valid: function(errors) {
+      var value = field.value;
+      if (value.indexOf('@') === -1) {
+        errors.push('Value is not a email-address.');
+      }
+
+      return errors.length === 0;
+    }
+  };
+}
 
 
 // TODO: implement Year Validator

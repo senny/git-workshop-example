@@ -54,10 +54,25 @@ $(document).ready(function(){
     // TODO: Value-Required Validator Tests
 
 
-    // TODO: E-Mail Validator Tests
+  module('E-Mail validator');
+
+  test('email addresses are valid', function()
+       {
+         expect(2);
+         var errors = [];
+         equal(buildEmailValidator({value: 'example@gmail.com'}).valid(errors), true);
+         deepEqual(errors, []);
+       });
+
+  test('value without @ is not valid', function()
+       {
+         expect(2);
+         var errors = [];
+         equal(buildEmailValidator({value: 'examplegmail.com'}).valid(errors), false);
+         deepEqual(errors, ['Value is not a email-address.']);
+       });
 
 
     // TODO: Year Validator Tests
-
 
 });
