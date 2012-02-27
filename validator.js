@@ -60,8 +60,8 @@ function buildEmailValidator(field) {
         errors.push('Value is not a email-address.');
       }
       var parts = value.split('.');
-      var topLevelDoain = parts[parts.length - 1];
-      if (topLevelDoain.length !== 2 && topLevelDoain.length !== 3) {
+      var topLevelDomain = parts[parts.length - 1];
+      if (topLevelDomain.length !== 2 && topLevelDomain.length !== 3) {
         errors.push('Value is not a email-address.');
       }
 
