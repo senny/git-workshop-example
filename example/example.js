@@ -1,6 +1,8 @@
 $(document).ready(function($) {
 
     initializeValidators({
-        'integer-field': buildIntValidator});
+        'integer-field': buildIntValidator,
+      'email-field': buildEmailValidator
+    });
 
 });
