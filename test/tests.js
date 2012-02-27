@@ -72,7 +72,20 @@ $(document).ready(function(){
          deepEqual(errors, ['Value is not a email-address.']);
        });
 
+  test('needs a 2-3 character top level domain ', function()
+       {
+         expect(4);
+         var errors = [];
+         equal(buildEmailValidator({value: 'example@gmail.com1'}).valid(errors), false);
+         deepEqual(errors, ['Value is not a email-address.']);
+
+         errors = [];
+         equal(buildEmailValidator({value: 'example@gmail.c'}).valid(errors), false);
+         deepEqual(errors, ['Value is not a email-address.']);
+       });
+
 
     // TODO: Year Validator Tests
+
 
 });
