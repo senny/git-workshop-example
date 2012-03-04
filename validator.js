@@ -8,7 +8,7 @@ function initializeValidators(fieldValidatorMap) {
 }
 
 function registerValidatorEventHandler(field, validator) {
-    field.change(function() {
+    field.blur(function() {
         var container = field.parents('li:first');
         container.find('.error').remove();
 
