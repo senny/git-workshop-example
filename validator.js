@@ -49,7 +49,18 @@ function buildIntValidator(field) {
 }
 
 
-// TODO: implement Value-Required Validator
+function buildValueRequiredValidator(field) {
+    return {
+        valid: function(errors) {
+            if (field.value.length === 0) {
+                errors.push('Value is required.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    };
+}
 
 
 // TODO: implement E-Mail Validator

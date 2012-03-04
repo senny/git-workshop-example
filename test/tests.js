@@ -51,7 +51,23 @@ $(document).ready(function(){
          });
 
 
-    // TODO: Value-Required Validator Tests
+    module('Value required validator');
+
+    test('Field with value is valid.', function()
+         {
+             expect(2);
+             var errors = [];
+             equal(buildValueRequiredValidator({value: 'foo'}).valid(errors), true);
+             deepEqual(errors, []);
+         });
+
+    test('Field without value is invalid.', function()
+         {
+             expect(2);
+             var errors = [];
+             equal(buildValueRequiredValidator({value: ''}).valid(errors), false);
+             deepEqual(errors, ['Value is required.']);
+         });
 
 
     // TODO: E-Mail Validator Tests
