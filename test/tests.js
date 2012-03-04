@@ -50,4 +50,14 @@ $(document).ready(function(){
              deepEqual(errors, []);
          });
 
+
+    // TODO: Value-Required Validator Tests
+
+
+    // TODO: E-Mail Validator Tests
+
+
+    // TODO: Year Validator Tests
+
+
 });

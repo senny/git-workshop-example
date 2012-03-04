@@ -27,6 +27,8 @@ function registerValidatorEventHandler(field, validator) {
     });
 }
 
+// Validators
+
 function buildIntValidator(field) {
     return {
         valid: function(errors) {
@@ -45,3 +47,12 @@ function buildIntValidator(field) {
         }
     };
 }
+
+
+// TODO: implement Value-Required Validator
+
+
+// TODO: implement E-Mail Validator
+
+
+// TODO: implement Year Validator
