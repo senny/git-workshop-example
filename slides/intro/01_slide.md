@@ -18,6 +18,13 @@
 * Tipps & Tricks, Q & A [30m]
 
 !SLIDE bullets
+# Co-Teacher #
+
+* Jonas Baumann
+* Python Entwickler [4teamwork GmbH]
+* Git seit 2008 [https://github.com/jone]
+
+!SLIDE bullets
 # Git-Session: Themen #
 
 * History Introspection
