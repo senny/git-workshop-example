@@ -1,4 +1,5 @@
 { "name": "Git Session",
   "sections": [
-    {"section":"intro"}
+    {"section":"intro"},
+    {"section":"manipulation"}
   ]}
