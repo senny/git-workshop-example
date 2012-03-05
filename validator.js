@@ -7,13 +7,6 @@ function initializeValidators(fieldValidatorMap) {
     });
 }
 
-function registerValidatorEventHandler(field, validator) {
-    field.change(function() {
-        var container = field.parents('li:first');
-        container.find('.error').remove();
-
-        var errors = [];
-        var valid = validator.valid(errors);
 
         if(!valid) {
             container.addClass('erroneous');
@@ -56,3 +49,4 @@ function buildIntValidator(field) {
 
 
 // TODO: implement Year Validator
+ajskldjaskl
