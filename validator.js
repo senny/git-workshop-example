@@ -73,6 +73,14 @@ function buildEmailValidator(field) {
         errors.push('Value is not a email-address.');
         return false;
       }
+
+      var domainPart = value.split('@')[1];
+      if (domainPart) {
+        var hostPart = domainPart.split('.')[0];
+        if (hostPart.length === 0) {
+          errors.push('Value is not a email-address.');
+          return false;
+        }
       }
 
       return errors.length === 0;

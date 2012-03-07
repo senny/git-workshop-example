@@ -92,6 +92,14 @@ $(document).ready(function(){
          deepEqual(errors, ['Value is not a email-address.']);
        });
 
+  test('host part is required', function()
+       {
+         expect(2);
+         var errors = [];
+         equal(buildEmailValidator({value: 'user@.com'}).valid(errors), false);
+         deepEqual(errors, ['Value is not a email-address.']);
+       });
+
 
     // TODO: Year Validator Tests
 
