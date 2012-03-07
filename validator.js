@@ -59,17 +59,22 @@ function buildEmailValidator(field) {
       console.log(value);
       if (value.indexOf('@') === -1) {
         errors.push('Value is not a email-address.');
+        return false;
       }
+
       var parts = value.split('.');
       var topLevelDomain = parts[parts.length - 1];
       if (topLevelDomain.length !== 2 && topLevelDomain.length !== 3) {
         console.log(parts, topLevelDomain);
         errors.push('Value is not a email-address.');
+        return false;
       }
 
       var userPart = value.split('@')[0];
       if (userPart.length === 0) {
         errors.push('Value is not a email-address.');
+        return false;
+      }
       }
 
       return errors.length === 0;
