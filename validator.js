@@ -56,7 +56,6 @@ function buildEmailValidator(field) {
   return {
     valid: function(errors) {
       var value = field.value;
-      console.log(value);
       if (value.indexOf('@') === -1) {
         errors.push('Value is not a email-address.');
         return false;
@@ -65,7 +64,6 @@ function buildEmailValidator(field) {
       var parts = value.split('.');
       var topLevelDomain = parts[parts.length - 1];
       if (topLevelDomain.length !== 2 && topLevelDomain.length !== 3) {
-        console.log(parts, topLevelDomain);
         errors.push('Value is not a email-address.');
         return false;
       }
