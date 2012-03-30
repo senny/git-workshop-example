@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Git Session</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/1">
+<h1>DevCamps 2012</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/01_slide/2">
+<h1>Tag 1</h1>
+
+<ul>
+<li>Git-Session [08:45]</li>
+<li>Mittagessen [12:15]</li>
+<li>Hack-Session [13:30]</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/01_slide/3">
+<h1>Git-Session: Ablauf</h1>
+
+<ul>
+<li>Intro / Theorie [45m]</li>
+<li>&#xDC;bungen 1 [45m]</li>
+<li>Pause [10:15, 30m]</li>
+<li>&#xDC;bungen 2 [1h]</li>
+<li>Tipps &amp; Tricks, Q &amp; A [30m]</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/01_slide/4">
+<h1>Co-Teacher</h1>
+
+<ul>
+<li>Jonas Baumann</li>
+<li>Python Entwickler [4teamwork GmbH]</li>
+<li>Git seit 2008 [https://github.com/jone]</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/01_slide/5">
+<h1>Git-Session: Themen</h1>
+
+<ul>
+<li>History Introspection</li>
+</ul>
+
+
+<p>(Fokus: Log, Diff)</p>
+
+<ul>
+<li>History Manipulation</li>
+</ul>
+
+
+<p>(Fokus: Reset, Merge, Rebase, Cherry-Pick)</p></div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="manipulation/01/1">
+<h1>Auffrischung</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets smaller" ref="manipulation/01/2">
+<h1>Commit</h1>
+
+<ul>
+<li>Jeder Commit hat einen eindeutigen Hash</li>
+<li>bestehen aus: Autor, Committer, Autor-Datum, Commit-Datum, Commit-Message, Snapshot (Tree)</li>
+<li>Ein Commit hat 0,1 oder mehrere Parents (Eltern)</li>
+<li>Merge-Commit: Commit mit mehreren Parents</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smaller" ref="manipulation/01/3">
+<h1>Branch</h1>
+
+<ul>
+<li>Referenz auf das neuste Commit eines Entwicklungsstrangs</li>
+<li>aktuell ausgecheckter Branch r&#xFC;ckt beim Commit vorw&#xE4;rts</li>
+<li>HEAD ist eine Referenz auf den aktuell ausgecheckten Branch</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="manipulation/01/4">
+<h1>Introspection &amp; Manipulation</h1></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="manipulation/01/5">
+<p><img src="./file/manipulation/graph.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="manipulation/01/6">
+<h1>Git Graph I</h1>
+
+<ul>
+<li>Netz aus zeitlich verkn&#xFC;pften Knoten (Commits)</li>
+<li>Git verstehen heisst den Graphen verstehen und ver&#xE4;ndern k&#xF6;nnen</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="manipulation/01/7">
+<h1>Git Graph II</h1>
+
+<ul>
+<li>S&#xE4;mtliche Operationen <em>(commit, branch, merge, rebase, cherry-pick)</em> sind Graph-Manipulationen</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="manipulation/01/8">
+<h1>Git Graph III</h1>
+
+<ul>
+<li>Knoten erzeugen (Commit)</li>
+<li>&#xC4;ste erzeugen (Branch)</li>
+<li>&#xC4;ste zusammenf&#xFC;gen (Merge)</li>
+<li>Knoten auf &#xC4;ste kopieren (Cherry-Pick)</li>
+<li>&#xC4;ste verschieben (Rebase)</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="manipulation/01/9">
+<h1>Befehle</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets smaller" ref="manipulation/01/10">
+<h1>git log</h1>
+
+<ul>
+<li>Anzeigen der Commits und deren Verkn&#xFC;pfung (Graph)</li>
+<li>Filtern von Commits</li>
+<li>Anzeigen der &#xC4;nderungen der einzelnen Commits</li>
+<li>Das Tool zur Inspektion des Graphs</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="manipulation/01/11">
+<h1>git diff</h1>
+
+<ul>
+<li>Vergleichen von zwei Snapshots</li>
+<li>History ist nicht relevant. Es werden direkt Commits oder Files verglichen.</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="manipulation/01/12">
+<h1>git cherry-pick</h1>
+
+<ul>
+<li>Commits &#xFC;ber mehrere Branches verwenden</li>
+<li>Bugfix auf mehrere Releases anwenden</li>
+<li>Nur einen Teil eines Branches integrieren</li>
+<li>Commits an einen anderen Ort verschieben</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smaller" ref="manipulation/01/13">
+<h1>git merge</h1>
+
+<ul>
+<li>Zwei Str&#xE4;nge miteinander verbinden</li>
+<li>Ein Merge-Commit hat mehr als 1 Parent.</li>
+<li>Ein Merge kann r&#xFC;ckg&#xE4;nig gemacht werden, wenn man das Merge-Commit entfernt</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smaller" ref="manipulation/01/14">
+<h1>git merge --ff-only</h1>
+
+<ul>
+<li>Merge von einem nicht abgezweiten Branch =&gt; Fast Forward</li>
+<li>Fast Forward Merge =&gt; kein Merge-Commit</li>
+<li>Fast Forward Merge =&gt; Branch in der History nicht mehr sichtbar</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="manipulation/01/15">
+<h2>git merge --no-ff topic/feature</h2>
+
+<p><img src="./file/manipulation/merge_no_ff.png" alt="git_intermediate"/></p>
+
+<h2>git merge --ff-only topic/feature</h2>
+
+<p><img src="./file/manipulation/merge_ff_only.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="manipulation/01/16">
+<h1>Rebase</h1>
+
+<ul>
+<li>Strang anhand einer Basis neu "ausrichten"</li>
+<li>Es werden neue Commits erstellt</li>
+<li>Folgende Informationen der Commits &#xE4;ndern: <em>Parent, Committer, Committer-Datum und der Snapshot</em></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="manipulation/01/17">
+<h1>Unterschied Merge | Rebase</h1></div>
+</div><div class="slide" data-transition="none"><div class="content center smaller" ref="manipulation/01/18">
+<h1>Ausgangslage</h1>
+
+<p><img src="./file/manipulation/rebase-0.png" alt="git_intermediate"/></p>
+
+<h1>Merge</h1>
+
+<p><img src="./file/manipulation/rebase-1.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center smaller" ref="manipulation/01/19">
+<h1>Ausgangslage</h1>
+
+<p><img src="./file/manipulation/rebase-0.png" alt="git_intermediate"/></p>
+
+<h1>Rebase</h1>
+
+<p><img src="./file/manipulation/rebase-2.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="manipulation/01/20">
+<h1>Rebase II</h1>
+
+<ul>
+<li>Commits "verschieben"</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="manipulation/01/21">
+<h1>Ausgangslage</h1>
+
+<p><img src="./file/manipulation/rebase2-0.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="manipulation/01/22">
+<h2>git rebase --onto master server client</h2>
+
+<p><img src="./file/manipulation/rebase2-1.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="manipulation/01/23">
+<h2>git checkout master &amp;&amp; git merge client</h2>
+
+<p><img src="./file/manipulation/rebase2-2.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="manipulation/01/24">
+<h2>git rebase master server</h2>
+
+<p><img src="./file/manipulation/rebase2-3.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="manipulation/01/25">
+<h2>git checkout master &amp;&amp; git merge server</h2>
+
+<p><img src="./file/manipulation/rebase2-4.png" alt="git_intermediate"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="manipulation/01/26">
+<h1>Rebase | Merge</h1>
+
+<ul>
+<li>NICHT rebasen mit ver&#xF6;ffentlichten Commits</li>
+<li>NICHT rebasen bei grossen Branches</li>
+<li>Merge ist in der History sichtbar (wenn nicht FF)</li>
+<li>Rebase simuliert lineare History</li>
+<li>Rebase --onto um Commits zu verschieben</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="manipulation/01/27">
+<h1>Interactive Rebase</h1>
+
+<ul>
+<li>Reihenfolge der Commits &#xE4;ndern</li>
+<li>Commit-Message &#xE4;ndern</li>
+<li>Commits verschmelzen</li>
+<li>Commits entfernen</li>
+<li>&#xC4;nderungen eines Commits bearbeiten</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="uebungen/01/1">
+<h1>&#xDC;bungen</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="uebungen/01/2">
+<h1>Ziel der &#xDC;bungen</h1>
+
+<ul>
+<li>Git Graph verstehen und ver&#xE4;ndern k&#xF6;nnen</li>
+<li>Git Dokumentationen kennen und interpretieren k&#xF6;nnen</li>
+<li>Pers&#xF6;nliche Fragen stellen und Arbeitsablauf festigen</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="uebungen/01/3">
+<h1>Vorgehen</h1>
+
+<ul>
+<li>In 2er Teams</li>
+<li>nicht stehenbleiben: fragen oder Aufgabe &#xFC;berspringen</li>
+<li>Bei Problemen oder pers&#xF6;nlichen Git Fragen stehen die Coaches zur Verf&#xFC;gung</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets" ref="uebungen/01/4">
+<h1>Teil 1</h1>
+
+<h2>Abl&#xE4;ufe</h2>
+
+<p>Fragen zum Release-Management mit Git beantworten</p>
+
+<p>Review effizient durchf&#xFC;hren</p>
+
+<h2>Befehle</h2>
+
+<p>Git Log und Diff gezielt einsetzten und verstehen</p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="uebungen/01/5">
+<h1>Teil 2</h1>
+
+<h2>Abl&#xE4;ufe</h2>
+
+<p>Git-Graph verstehen und gestalten</p>
+
+<p>Klare und informative History erstellen</p>
+
+<h2>Befehle</h2>
+
+<p>Git Merge und Rebase gezielt einsetzten und verstehen</p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="uebungen/01/6">
+<h1>Coaches</h1>
+
+<ul>
+<li>Jonas Baumann</li>
+<li>Yves Senn</li>
+<li>Leo von Wyss (DevCamp II)</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smaller bullets" ref="uebungen/01/7">
+<h1>Repository</h1>
+
+<ul>
+<li>Gerrit: git clone gerrit:Garaio/DevCamps/GitWorkshop</li>
+</ul>
+
+
+<h2>Oder</h2>
+
+<ul>
+<li>Github: git clone https://github.com/senny/git-workshop-example</li>
+</ul>
+</div>
+</div></div>
+
+</body>
+</html>
