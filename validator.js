@@ -52,7 +52,41 @@ function buildIntValidator(field) {
 // TODO: implement Value-Required Validator
 
 
-// TODO: implement E-Mail Validator
+function buildEmailValidator(field) {
+  return {
+    valid: function(errors) {
+      var value = field.value;
+      if (value.indexOf('@') === -1) {
+        errors.push('Value is not a email-address.');
+        return false;
+      }
+
+      var parts = value.split('.');
+      var topLevelDomain = parts[parts.length - 1];
+      if (topLevelDomain.length !== 2 && topLevelDomain.length !== 3) {
+        errors.push('Value is not a email-address.');
+        return false;
+      }
+
+      var userPart = value.split('@')[0];
+      if (userPart.length === 0) {
+        errors.push('Value is not a email-address.');
+        return false;
+      }
+
+      var domainPart = value.split('@')[1];
+      if (domainPart) {
+        var hostPart = domainPart.split('.')[0];
+        if (hostPart.length === 0) {
+          errors.push('Value is not a email-address.');
+          return false;
+        }
+      }
+
+      return errors.length === 0;
+    }
+  };
+}
 
 
 // TODO: implement Year Validator
