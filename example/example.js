@@ -1,6 +1,7 @@
 $(document).ready(function($) {
 
     initializeValidators({
-        'integer-field': buildIntValidator});
+        'integer-field': buildIntValidator,
+        'required-field': buildValueRequiredValidator});
 
 });
