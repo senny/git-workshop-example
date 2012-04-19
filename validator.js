@@ -55,4 +55,17 @@ function buildIntValidator(field) {
 // TODO: implement E-Mail Validator
 
 
-// TODO: implement Year Validator
+function buildYearValidator(field) {
+  var intValidator = buildIntValidator(field);
+    return {
+        valid: function(errors) {
+          intValidator.valid(errors);
+          console.log(errors);
+          var value = field.value;
+          if (value.length !== 4) {
+            errors.push('Value must match the format yyyy');
+          }
+          return errors.length === 0;
+        }
+    };
+}

@@ -57,7 +57,34 @@ $(document).ready(function(){
     // TODO: E-Mail Validator Tests
 
 
-    // TODO: Year Validator Tests
+  module('Year validator');
 
+  test('must be a 4 digit number', function()
+       {
+         expect(2);
+         var errors = [];
+         equal(buildYearValidator({value: '1928'}).valid(errors), true);
+         deepEqual(errors, []);
+       });
+
+  test('non 4 digit numbers are invalid', function()
+       {
+         expect(4);
+         var errors = [];
+         equal(buildYearValidator({value: '192'}).valid(errors), false);
+         deepEqual(errors, ['Value must match the format yyyy']);
+
+         errors = [];
+         equal(buildYearValidator({value: '19222'}).valid(errors), false);
+         deepEqual(errors, ['Value must match the format yyyy']);
+       });
+
+  test('must be a number', function()
+       {
+         expect(2);
+         var errors = [];
+         equal(buildYearValidator({value: 'asdj'}).valid(errors), false);
+         deepEqual(errors, ['Value is not a number.']);
+       });
 
 });
